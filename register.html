@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .register {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(220, 220, 220);
+      }
+      .register form {
+        padding: 20px 60px;
+        background-color: white;
+        width: 450px;
+        border-radius: 10px;
+      }
+      .register form h1 {
+        text-align: center;
+      }
+      .input_box {
+        position: relative;
+        margin: 20px 0;
+      }
+      .input_box input {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        background: transparent;
+        padding-inline: 20px 50px;
+        border: 1px solid black;
+        border-radius: 10px;
+        outline: none;
+      }
+      .input_box label {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        transition: 0.2s;
+        background-color: white;
+      }
+      .input_box input:focus {
+        border: 1px solid rgb(141, 228, 255);
+        outline: none;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+      }
+      .input_box input:focus ~ label,
+      .input_box input:valid ~ label {
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 14px;
+        padding: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register">
+      <form action="" method="post">
+        <h1>Đăng ký</h1>
+        <div class="input_box">
+          <input type="text" name="" id="" required />
+          <label for="">Email</label>
+        </div>
+        <div class="input_box">
+          <input type="password" name="" id="" required />
+          <label for="">Password</label>
+        </div>
+        <div class="forget">
+          <label for=""><input type="checkbox" />Lưu mật khẩu</label>
+          <a href="">Quên mật khẩu</a>
+        </div>
+        <button>Đăng ký</button>
+        <div class="registerr">
+          <p>Bạn đã có tài khoản? <a href="">Đăng nhập</a></p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

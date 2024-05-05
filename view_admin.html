@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="box_left" >
+      <h1 class="mb">Quản Trị Admin</h1>
+      <div class="user mb">
+        <img align="left" src="image/IMG_20220429_165449.jpg" alt="avatar" />
+        <div class="name_user">
+          <p>admin@gmail.com</p>
+          <p>Admin</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><i class="fas fa-tachometer-alt icon"></i> Bảng điều khiển</li>
+          <li>
+            <i class="fas fa-cloud icon"></i> Loại sản phẩm
+            <i class="fas fa-chevron-down"></i>
+          </li>
+          <li>
+            <i class="fas fa-tshirt icon"></i> Sản phẩm
+            <i class="fas fa-chevron-down"></i>
+          </li>
+          <li>
+            <i class="fas fa-edit icon"></i> Đơn hàng
+            <i class="fas fa-chevron-down"></i>
+          </li>
+          <li>
+            <i class="fas fa-paper-plane icon"></i> Bình luận
+            <i class="fas fa-chevron-down"></i>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="box_leftt"></div>
+      <div class="box_right">
+        <div class="box_top">
+          <div class="open">
+            <span></span>
+          </div>
+          <div class="search">
+            <input type="text" name="" placeholder="Search..." />
+            <i class="fas fa-search"></i>
+            <button>Tìm kiếm</button>
+          </div>
+          <div class="mess">
+            <span><i class="fas fa-envelope"></i><small>Tin nhắn</small></span>
+            <span><i class="fas fa-bell"></i><small>Thông báo</small></span>
+            <span
+              ><i class="fas fa-user"></i><small>Hi! Admin</small>
+              <i class="fas fa-chevron-down"></i
+            ></span>
+          </div>
+        </div>
+        <main class="mb">
+          <div class="statistical mt">
+            <div class="box_">
+              <a href="">Show All</a>
+              <div>
+                <i class="fas fa-chart-pie fa-lg" style="color: #277eda"></i>
+              </div>
+              <div>
+                <p>Tổng số đơn hàng</p>
+                <span>1234</span>
+              </div>
+            </div>
+            <div class="box_">
+              <a href="">Show All</a>
+              <div>
+                <i class="fas fa-chart-line" style="color: #277eda"></i>
+              </div>
+              <div>
+                <p>Tổng số sản phẩm</p>
+                <span>1234</span>
+              </div>
+            </div>
+            <div class="box_">
+              <a href="">Show All</a>
+              <div><i class="fas fa-chart-bar" style="color: #277eda"></i></div>
+              <div>
+                <p>Doanh thu hôm nay</p>
+                <span>1234</span>
+              </div>
+            </div>
+            <div class="box_">
+              <a href="">Show All</a>
+              <div>
+                <i class="fas fa-chart-area" style="color: #277eda"></i>
+              </div>
+              <div>
+                <p>Khách hàng truy cập</p>
+                <span>1234</span>
+              </div>
+            </div>
+          </div>
+          <div class="box_ceter mt">
+            <div class="column_chart">
+              <script type="text/javascript">
+                google.charts.load("current", {
+                  packages: ["bar"],
+                });
+                google.charts.setOnLoadCallback(drawStuff);
+
+                function drawStuff() {
+                  var data = new google.visualization.arrayToDataTable([
+                    ["Move", "Percentage"],
+                    ["King's pawn (e4)", 44],
+                    ["Queen's pawn (d4)", 31],
+                    ["Knight to King 3 (Nf3)", 12],
+                    ["Queen's bishop pawn (c4)", 10],
+                    ["Other", 3],
+                  ]);
+
+                  var options = {
+                    width: 400,
+                    legend: {
+                      position: "none",
+                    },
+                    bar: {
+                      groupWidth: "90%",
+                    },
+                  };
+
+                  var chart = new google.charts.Bar(
+                    document.getElementById("top_x_div")
+                  );
+                  // Convert the Classic options to Material options.
+                  chart.draw(data, google.charts.Bar.convertOptions(options));
+                }
+              </script>
+              <div id="top_x_div" style="width: 400px; height: 200px"></div>
+            </div>
+
+            <div class="area_chart">
+              <script type="text/javascript">
+                google.charts.load("current", {
+                  packages: ["corechart"],
+                });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                  var data = google.visualization.arrayToDataTable([
+                    ["Year", "Sales", "Expenses"],
+                    ["2013", 1000, 400],
+                    ["2014", 1170, 460],
+                    ["2015", 660, 1120],
+                    ["2016", 1030, 540],
+                  ]);
+
+                  var options = {
+                    title: "Company Performance",
+                    hAxis: {
+                      title: "Year",
+                      titleTextStyle: {
+                        color: "#333",
+                      },
+                    },
+                    vAxis: {
+                      minValue: 0,
+                    },
+                  };
+                  var chart = new google.visualization.AreaChart(
+                    document.getElementById("chart_div")
+                  );
+                  chart.draw(data, options);
+                }
+              </script>
+              <div id="chart_div" style="width: 400px; height: 200px"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+  <script>
+    const open = document.querySelector(".open");
+    const box_left = document.querySelector(".box_left");
+
+    open.addEventListener("click", ()=>{
+      open.classList.toggle("open_after");
+      box_left.classList.toggle("open_menu");
+    })
+
+    var navItems = document.querySelectorAll("nav ul li");
+
+    navItems.forEach(function (item) {
+      item.addEventListener("click", function () {
+        // Reset the color of all items
+        navItems.forEach(function (item) {
+          item.style.color = "";
+          item.style.backgroundColor = "";
+          item.style.borderLeft = "";
+        });
+        // Set the color of the clicked item to red
+        item.style.color = "rgb(0, 195, 255)";
+        item.style.backgroundColor = "rgb(255, 255, 255)";
+        item.style.borderLeft = "2px solid blue";
+        item.style.borderRadius = "0 50px 50px 0";
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+
+  <style>
+    .stars i.active {
+      color: orange;
+    }
+  </style>
+  <body>
+    <div class="stars">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+    </div>
+    <h1 id="demo"></h1>
+    <script>
+      const stars = document.querySelectorAll(".stars i");
+      stars.forEach((star, index1) => {
+        star.addEventListener("click", () => {
+          document.getElementById("demo").innerHTML = index1 + 1;
+          stars.forEach((star, index2) => {
+            index1 >= index2
+              ? star.classList.add("active")
+              : star.classList.remove("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
